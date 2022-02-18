@@ -1,0 +1,14 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="slipushkin_weather" engine="innodb">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true"/>
+        <column xsi:type="float" name="temperature" nullable="true"/>
+        <column xsi:type="int" name="pressure" nullable="true"/>
+        <column xsi:type="decimal" name="humidity" nullable="true"/>
+        <column xsi:type="text" name="city" nullable="false"/>
+        <column xsi:type="text" name="country" nullable="false"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

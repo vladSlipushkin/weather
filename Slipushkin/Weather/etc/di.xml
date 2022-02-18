@@ -1,0 +1,21 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <preference for="Slipushkin\Weather\Api\WeatherRepositoryInterface" type="Slipushkin\Weather\Model\WeatherRepository"/>
+    <preference for="Slipushkin\Weather\Api\Data\WeatherInterface" type="Slipushkin\Weather\Model\Weather"/>
+    <preference for="Slipushkin\Weather\Api\Data\WeatherSearchResultInterface" type="Slipushkin\Weather\Model\WeatherSearchResult"/>
+    <preference for="Slipushkin\Weather\Api\WeatherManagementInterface" type="Slipushkin\Weather\Model\WeatherManagement" />
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+    <arguments>
+        <argument name="collections" xsi:type="array">
+            <item name="slipushkin_weather_weather_listing_data_source" xsi:type="string">Slipushkin\Weather\Model\ResourceModel\Weather\Grid\Collection</item>
+        </argument>
+    </arguments>
+    </type>
+    <virtualType name="Slipushkin\Weather\Model\ResourceModel\Weather\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">slipushkin_weather</argument>
+            <argument name="resourceModel" xsi:type="string">Slipushkin\Weather\Model\ResourceModel\Weather</argument>
+            <argument name="eventPrefix" xsi:type="string">slipushkin_weather_weather_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">weather_grid_collection</argument>
+        </arguments>
+    </virtualType>
+</config>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="slipushkin" translate="label" sortOrder="10">
+            <label>Slipushkin</label>
+        </tab>
+        <section id="weather" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Weather</label>
+            <tab>slipushkin</tab>
+            <resource>Slipushkin_Weather::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="api_key" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Open Weather Key</label>
+                    <comment>
+                        <![CDATA[<a href="https://home.openweathermap.org/users/sign_up" target="_blank">https://home.openweathermap.org/users/sign_up</a>]]>
+                    </comment>
+                </field>
+                <field id="unit" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Unit</label>
+                    <source_model>Slipushkin\Weather\Model\Config\Source\ListUnits</source_model>
+                </field>
+                <field id="cities" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Cities</label>
+                    <frontend_model>Slipushkin\Weather\Block\Adminhtml\Form\Field\Cities</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

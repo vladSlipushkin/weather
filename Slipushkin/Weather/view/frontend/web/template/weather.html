@@ -1,0 +1,27 @@
+<!-- ko if: data.city -->
+<div class="weather-widget">
+    <select data-bind="value: cityChange">
+        <!-- ko foreach: { data: getCities(), as: 'item' } -->
+        <option data-bind="value : $index()" text="item.city + ' (' + item.country + ')'"></option>
+        <!-- /ko -->
+    </select>
+    <div class="weather-widget__title">
+        <span class="weather-widget__label" translate="'City'" />
+        <span class="weather-widget__value" text="data.city" />
+    </div>
+    <ul class="weather-widget__list">
+        <li class="weather-widget__item">
+            <span class="weather-widget__label" translate="'Temperature'" />
+            <span class="weather-widget__value" text="data.temperature" />
+        </li>
+        <li class="weather-widget__item">
+            <span class="weather-widget__label" translate="'Pressure'" />
+            <span class="weather-widget__value" text="data.pressure" />
+        </li>
+        <li class="weather-widget__item">
+            <span class="weather-widget__label" translate="'Humidity'" />
+            <span class="weather-widget__value" text="data.humidity" />
+        </li>
+    </ul>
+</div>
+<!--/ko-->

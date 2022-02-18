@@ -1,0 +1,16 @@
+{
+    "slipushkin_weather": {
+        "column": {
+            "id": true,
+            "temperature": true,
+            "pressure": true,
+            "humidity": true,
+            "city": true,
+            "country": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
